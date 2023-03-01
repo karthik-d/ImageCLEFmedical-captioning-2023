@@ -1,0 +1,52 @@
+challenge:
+  name: imageclef-2022-caption-concept-detection
+  template: broker
+  authors:
+  - name: Johannes Rückert
+    email: johannes.rueckert@fh-dortmund.de>
+  - name: Ivan Eggel
+    email: ivan.eggel@hevs.ch
+  description: ImageCLEF 2022 Caption - Concept Detection
+  version: '0.1'
+
+
+# Below keys will also be available as kwargs in your evaluator's init function
+scoring:
+
+  # Base docker image to run, you can change to specify your own python version etc
+  # Use the `-slim` images to keep things faster
+  image: python:3.6.7-slim
+
+  # You can define your own timeout, default is 180 seconds
+  # Please don't put extremely large numbers here, it will cause trouble when user's code are faulty
+  timeout: 360
+
+  # File to run i.e. containing your evaluation code
+  evaluator_path: evaluator.py
+
+  # This will be passed as `ground_truth_path` to your evaluator's init function
+  ground_truth_path: data/resources/ImageCLEFCaption_2022_concept_detection_test_gt.csv
+
+  # Run the evaluation in protected environment, with no internet access to user's code (default: true)
+  disable_internet: true
+
+
+notifications:
+  # Do not change anything except the challenge name and the URL.
+  - name: slack
+    image: aicrowd/evaluations-api-slack-notifier:v1
+    env:
+      SLACK_WEBHOOK_URL: "{slack_webhook_url}"
+      # Enter the challenge name and the url
+      CHALLENGE_NAME: "imageclef2022-caption-concept-detection"
+      CHALLENGE_URL: "https://www.aicrowd.com/challenges/imageclef-2022-caption-concept-detection"
+    message:
+      name: "placeholder"
+      value: "placeholder"
+  - name: aicrowd
+    image: aicrowd/evaluations-api-notifier:v1.0
+    env:
+      TESTING: "random"
+    message:
+      name: TESTING
+      value: "random"
