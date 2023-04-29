@@ -131,7 +131,7 @@ class DataGen(keras.utils.Sequence):
         ## Path
         image_path = self.trainpath+'/'+id_name             
         
-        ## Reading Image        
+        ## Reading Image    
         image = cv2.imread(image_path, 1)
         cui_ids = img_cui_dict[id_name[:-4]][0].split(sep=";")        
         
@@ -176,7 +176,9 @@ class DataGen(keras.utils.Sequence):
         return images, encoded_batch_cuis
     
     def on_epoch_end(self):
-        pass
+        print("reordering image ids")
+        np.random.shuffle(self.ids)
+        
     
     def __len__(self):
         return int(np.ceil(len(self.ids)/float(self.batch_size)))
@@ -229,20 +231,20 @@ opt = keras.optimizers.Adam(learning_rate=1e-05)
 data_reader = DataGen(img_id, encoder, mlb, batch_size=8)
 model2 = Model(inp2, out2)
 model2.summary()
-model2.compile(
+model2.compile( 	
 optimizer=opt,
-loss='sparse_categorical_crossentropy',
+loss='categorical_crossentropy',
 metrics=['acc']
 )
 
 
-#weight_save = keras.callbacks.ModelCheckpoint('weights/weights-efficientnetb0/weights-epoch-{epoch:03d}.h5', save_weights_only=True, period=1)
-#on_epoch_end_call = keras.callbacks.LambdaCallback(on_epoch_end=data_reader.on_epoch_end())
+weight_save = keras.callbacks.ModelCheckpoint('weights/weights-densenet121/weights-epoch-1_{epoch:03d}.h5', save_weights_only=True, save_freq=1)
+on_epoch_end_call = keras.callbacks.LambdaCallback(on_epoch_end=data_reader.on_epoch_end())
 
-#model2.load_weights('/home/miruna/LifeCLEF/FungiCLEF/weights/weights-efficientnetb0/weights-epoch-006.h5')
+#model2.load_weights('weights/weights-densenet121/weights-epoch-006.h5')
 model2.fit(data_reader,
-epochs=10,
+epochs=1000,
 verbose=1,
-steps_per_epoch=31000,
-#callbacks=[weight_save, on_epoch_end_call]
+steps_per_epoch=20000,
+callbacks=[weight_save, on_epoch_end_call]
 )
