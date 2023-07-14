@@ -4,6 +4,7 @@ Scripts, figures, and working notes for the participation in ImageCLEFmedical, p
 
 ## Quick Links
 
+- Link to manuscript, describing the approach and rational. [TO BE ADDED]
 - [Dataset for 2023 - *train*, *valid*, and *test*](https://drive.google.com/drive/folders/14GmtlRUQ1LDnO9PkpSjIA6eJW8lLVuT7?usp=share_link).
 - [Link to contest instructions](https://www.imageclef.org/2023/medical/caption).
 - [Link to shared Google Drive (**private**)](https://drive.google.com/drive/folders/1fd0SRO2IColNpPwsecNiNSeI7E3spad6?usp=sharing). 
