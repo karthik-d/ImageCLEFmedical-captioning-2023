@@ -1,6 +1,8 @@
 # ImageCLEF Medical: Concept Prediction and Captioning
 
-Scripts, figures, and working notes for the participation in ImageCLEFmedical, part of the 14th CLEF Conference, 2023.
+Scripts, figures, and working notes for the participation in [ImageCLEFmed Caption task](https://www.imageclef.org/2023/medical/caption), part of the [ImageCLEF labs](https://www.imageclef.org/2023) at the [14th CLEF Conference, 2023](https://clef2023.clef-initiative.eu/index.php).
+
+**Implementation Stack**: Python, Keras, TensorFlow, Scikit-learn.
 
 ## Quick Links
 
@@ -8,6 +10,27 @@ Scripts, figures, and working notes for the participation in ImageCLEFmedical, p
 - [Dataset for 2023](https://drive.google.com/drive/folders/14GmtlRUQ1LDnO9PkpSjIA6eJW8lLVuT7?usp=share_link): training, validation, and testing sets.
 - [Link to contest resources](https://www.imageclef.org/2023/medical/caption).
 - [Link to shared Google Drive [**private access**]](https://drive.google.com/drive/folders/1fd0SRO2IColNpPwsecNiNSeI7E3spad6?usp=sharing). 
+
+
+## Cite Us
+
+[Link to the Research Paper](https://ceur-ws.org/Vol-3497/paper-136.pdf).
+
+If you find our work useful in your research, don't forget to cite us!
+
+```
+@article{palaniappan2023concept,
+  url = {https://ceur-ws.org/Vol-3497/paper-136.pdf},
+  title={Concept Detection and Caption Prediction from Medical Images using Gradient Boosted Ensembles and Deep Learning},
+  author={Palaniappan, Mirunalini and Bharathi, Haricharan and Chodisetty, Eeswara Anvesh and Bhaskar, Anirudh and Desingu, Karthik},
+  year={2023},
+  keywords={concept detection, caption prediction, natural language processing, computer vision ensemble, feature extraction, deep learning, automated image captioning},
+  journal={Conference and Labs of the Evaluation Forum},
+  publisher={Conference and Labs of the Evaluation Forum},
+  ISSN={1613-0073},  
+  copyright = {Creative Commons Attribution 4.0 International}
+}
+```
 
 ## Objectives
 
