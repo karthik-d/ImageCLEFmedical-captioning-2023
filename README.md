@@ -1,6 +1,6 @@
-# ImageCLEF Medical: Concept Prediction and Captioning
+# ImageCLEF Medical 2023: Concept Prediction and Captioning
 
-Scripts, figures, and working notes for the participation in [ImageCLEFmed Caption task](https://www.imageclef.org/2023/medical/caption), part of the [ImageCLEF labs](https://www.imageclef.org/2023) at the [14th CLEF Conference, 2023](https://clef2023.clef-initiative.eu/index.php).
+Scripts, figures, and working notes for the participation in [ImageCLEFmedical Caption task](https://www.imageclef.org/2023/medical/caption), part of the [ImageCLEF labs](https://www.imageclef.org/2023) at the [14th CLEF Conference, 2023](https://clef2023.clef-initiative.eu/index.php).
 
 **Implementation Stack**: Python, Keras, TensorFlow, Scikit-learn.
 
